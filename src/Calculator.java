@@ -16,6 +16,8 @@ public class Calculator implements ActionListener {
     double num1 = 0, num2 = 0, result = 0;
     char operator;
 
+    boolean operatorEnable = false;
+
     public Calculator() {
         frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -103,6 +105,11 @@ public class Calculator implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         for (int i = 0; i < 10; i++) {
             if (e.getSource() == numberButtons[i]) {
+                if (operatorEnable) {
+                    textField.setText("");
+                    operatorEnable = false;
+                }
+
                 textField.setText(textField.getText().concat(String.valueOf(i)));
             }
         }
@@ -121,25 +128,29 @@ public class Calculator implements ActionListener {
         if (e.getSource() == addButton) {
             num1 = Double.parseDouble(textField.getText());
             operator = '+';
-            textField.setText("");
+            operatorEnable = true;
+//            textField.setText("");
         }
 
         if (e.getSource() == subButton) {
             num1 = Double.parseDouble(textField.getText());
             operator = '-';
-            textField.setText("");
+            operatorEnable = true;
+//            textField.setText("");
         }
 
         if (e.getSource() == mulButton) {
             num1 = Double.parseDouble(textField.getText());
             operator = '*';
-            textField.setText("");
+            operatorEnable = true;
+//            textField.setText("");
         }
 
         if (e.getSource() == divButton) {
             num1 = Double.parseDouble(textField.getText());
             operator = '/';
-            textField.setText("");
+            operatorEnable = true;
+//            textField.setText("");
         }
 
         if (e.getSource() == equButton) {
