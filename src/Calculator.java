@@ -123,31 +123,31 @@ public class Calculator implements ActionListener {
         }
 
         if (e.getSource() == addButton) {
-            getResult(operator);
+            setResult(operator);
             operator = '+';
             operatorEnable = true;
         }
 
         if (e.getSource() == subButton) {
-            getResult(operator);
+            setResult(operator);
             operator = '-';
             operatorEnable = true;
         }
 
         if (e.getSource() == mulButton) {
-            getResult(operator);
+            setResult(operator);
             operator = '*';
             operatorEnable = true;
         }
 
         if (e.getSource() == divButton) {
-            getResult(operator);
+            setResult(operator);
             operator = '/';
             operatorEnable = true;
         }
 
         if (e.getSource() == equButton) {
-            getResult(operator);
+            setResult(operator);
             operator = ' ';
         }
 
@@ -168,7 +168,7 @@ public class Calculator implements ActionListener {
         }
     }
 
-    public void getResult(char operatorValue) {
+    public void setResult(char operatorValue) {
         if (num1 == 0 && num2 == 0) {
             num1 = Double.parseDouble(textField.getText());
 
