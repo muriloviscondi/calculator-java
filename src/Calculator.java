@@ -12,7 +12,6 @@ public class Calculator implements ActionListener {
     JButton addButton, subButton, mulButton, divButton;
     JButton decButton, equButton, delButton, clrButton;
     JPanel panel;
-
     Operators operators = new Operators();
 
     Font myFont = new Font("Arial", Font.BOLD, 20);
@@ -130,9 +129,6 @@ public class Calculator implements ActionListener {
             textField.setText(String.valueOf(result));
             operators.setOperator('+');
             operators.setOperatorEnable(true);
-//            setResult(operator);
-//            operator = '+';
-//            operatorEnable = true;
         }
 
         if (e.getSource() == subButton) {
@@ -168,7 +164,6 @@ public class Calculator implements ActionListener {
             double result = operators.setResult(operators.getOperator(), getTextField);
             textField.setText(String.valueOf(result));
             operators.setOperator(' ');
-//            operators.setOperatorEnable(true);
         }
 
         if (e.getSource() == clrButton) {

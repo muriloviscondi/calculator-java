@@ -28,7 +28,6 @@ public class Operators {
     public double setResult(char operatorValue, String textField) {
         if (num1 == 0 && num2 == 0) {
             setNum1(Double.parseDouble(textField));
-//            num1 = Double.parseDouble(textField.getText());
 
             return num1;
         }
